@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', open-sans;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background: #023d6d;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  width: 100%;
+}
+
+#results,
+#calculator {
+  margin: 2rem auto;
+  width: 40rem;
+  max-width: 90%;
+  border: 1px solid #023d6d;
+  border-radius: 10px;
+  padding: 1rem;
+  color: #023d6d;
+}
+
+#results {
+  text-align: center;
+}
+
+#calculator input {
+  font: inherit;
+  font-size: 3rem;
+  border: 2px solid #023d6d;
+  width: 10rem;
+  padding: 0.15rem;
+  margin: auto;
+  display: block;
+  color: #023d6d;
+  text-align: center;
+}
+
+#calculator input:focus {
+  outline: none;
+}
+
+#calculator button {
+  font: inherit;
+  background: #023d6d;
+  color: white;
+  border: 1px solid #023d6d;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+#calculator button:focus {
+  outline: none;
+}
+
+#calculator button:hover,
+#calculator button:active {
+  background: #084f88;
+  border-color: #084f88;
+}
+
+#calc-actions button {
+  width: 4rem;
+}
+
+#calc-actions {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+
+/*  */
+/* style for the object comparison */
+/*  */
+#resultsObjectSection {
+  margin: 2rem auto;
+  width: 40rem;
+  max-width: 90%;
+  border: 1px solid #023d6d;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: left;
+}
+
+/*  */
+/* style for the for - loops */
+/*  */
+ul {
+  margin: 2rem auto;
+  width: 40rem;
+  max-width: 90%;
+  border: 1px solid #023d6d34;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: left;
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+.container:has(
+  #resultsForLooph4:empty,
+  #resultsForOfLooph4:empty,
+  #resultsForInLooph4:empty,
+  #resultsObject:empty,
+  #resultsWhileLooph4:empty,
+  #resultsErrorh4:empty,
+  #resultsThroughErrorh4:empty,
+  #resultsErrorTryCatchh4:empty,
+  #prem:empty,
+  #ref:empty,
+  #random:empty,
+  #timeout:empty,
+  #dateTime:empty,
+  #restOp:empty,
+  #spreadOp:empty,
+  #cbf:empty,
+  #bindTest:empty,
+  #toggleTest:empty,
+  #innerHTMLTest:empty,
+  #appendTest:empty,
+  #lastElementChild:empty,
+  #styled-listLi:empty,
+  #nodevsel:empty,
+  #classnameTest:empty,
+  #inputTest:empty,
+  #arrayfromstring:empty,
+  #pusharray:empty,
+  #unshiftarray:empty,
+  #poparray:empty,
+  #shiftarray:empty,
+  #splicearray:empty,
+  #slicearray:empty,
+  #spreadarray:empty,
+  #concatarray:empty,
+  #indexOfarray:empty,
+  #findInarrayDiv:empty,
+  #findIndexarrayDiv:empty,
+  #includesarrayDiv:empty,
+  #toStringarrayDiv:empty,
+  #joinarrayDiv:empty,
+  #splitarrayDiv:empty,
+  #mathminarrayDiv:empty,
+  #forEacharrayDiv:empty,
+  #maparrayDiv:empty,
+  #sortarrayDiv:empty,
+  #filterarrayDiv:empty,
+  #reducearrayDiv:empty,
+  #everyarrayDiv:empty,
+  #disarrayDiv:empty,
+  #disobjectDiv:empty,
+  #SetarrayDiv:empty,
+  #ObjEntrarrayDiv:empty,
+  #ObjPlayarrayDiv:empty,
+) {
+  display: none;
+}
+
+
+.styled-list {
+  list-style-type: none;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.styled-list li {
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.styled-list li::after {
+  content: "→";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333333;
+  opacity: 0;
+  transition: opacity 200ms, right 400ms;
+}
+
+.styled-list li:hover::after {
+  opacity: 1;
+  right: 8px; /* Adjust the distance from the right edge */
+}
+
+
+.styled-list li:hover {
+  background-color: #171b8d45;
+}
+
+.bg-red { 
+  background: red; 
+}

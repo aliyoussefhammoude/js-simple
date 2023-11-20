@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Basics</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="assets/styles/app.css" />
+        <script src="assets/scripts/vendor.js" defer></script>
+        <script src="assets/scripts/app.js" defer></script>
+        <script src="assets/scripts/calc.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Miniräknare nr 1</h1>
+        </header>
+        <input
+            style="
+                display: block;
+                margin: auto;
+                width: 16.8rem;
+                margin-top: 3rem;
+            "
+            type="text"
+            id="display"
+            disabled
+        />
+
+        <div id="calc-actions">
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('+')">+</button>
+        </div>
+
+        <div id="calc-actions">
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('-')">-</button>
+        </div>
+
+        <div id="calc-actions">
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('*')">*</button>
+        </div>
+
+        <div id="calc-actions">
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="calculatee()">=</button>
+            <button onclick="appendToDisplay('/')" style="margin-bottom: 3rem">
+                /
+            </button>
+        </div>
+
+        <header>
+            <h1>Miniräknare nr 2</h1>
+        </header>
+
+        <section id="calculator">
+            <input type="number" id="input-number" />
+            <div id="calc-actions">
+                <button type="button" id="btn-add">+</button>
+                <button type="button" id="btn-subtract">-</button>
+                <button type="button" id="btn-multiply">*</button>
+                <button type="button" id="btn-divide">/</button>
+            </div>
+        </section>
+
+        <section id="results">
+            <h2 id="current-calculation">0</h2>
+            <h2>Result: <span id="current-result">0</span></h2>
+        </section>
+
+        <header>
+            <h1>Objekt jämförelse</h1>
+        </header>
+
+        <section id="resultsObjectSection">
+            <div style="margin: 2rem">
+                <label
+                    >Det här kollar ifall Object A är densamma som Object B <br
+                /></label>
+                <label for="inputValueForObject"
+                    >Ange ett värde som ska både finnas i objekt A och B:</label
+                >
+                <br />
+                <input type="text" id="inputValueForObject" />
+                <button onclick="performEqualityCheck()">
+                    Utför jämförelse
+                </button>
+            </div>
+
+            <div
+                class="container"
+                style="
+                    padding: 2rem;
+                    background-color: #414141;
+                    color: white;
+                    margin: 2rem;
+                "
+            >
+                <code id="resultsObject"></code>
+            </div>
+        </section>
+
+        <header>
+            <h1>Resultat av loop Manipulation</h1>
+        </header>
+
+        <section id="resultsObjectSection">
+            <header>
+                <h1>for loops</h1>
+            </header>
+
+            <div style="margin: 2rem">
+                <p>For loop</p>
+                <label for="inputValueForLoop"
+                    >Skriv in vad som ska finnas i arrayn, separera med
+                    mellanrum:</label
+                >
+                <br />
+                <input type="text" id="inputValueForLoop" />
+                <button onclick="performForLoop()">
+                    Loopa igenom och ge mig innehållet med stora bokstäver
+                </button>
+            </div>
+
+            <div
+                class="container"
+                style="
+                    padding: 2rem;
+                    background-color: #414141;
+                    color: white;
+                    margin: 2rem;
+                "
+            >
+                <code id="resultsForLooph4"></code>
+            </div>
+
+            <ul class="styled-list" id="resultsForLoop"></ul>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>For-of loop</p>
+                <label for="inputValueForOfLoop"
+                    >Skriv in vad som ska finnas i arrayn, separera med
+                    mellanrum:</label
+                >
+                <br />
+                <input type="text" id="inputValueForOfLoop" />
+                <button onclick="performForOfLoop()">
+                    Loopa igenom och ge mig innehållet med stora bokstäver
+                </button>
+            </div>
+
+            <div
+                class="container"
+                style="
+                    padding: 2rem;
+                    background-color: #414141;
+                    color: white;
+                    margin: 2rem;
+                "
+            >
+                <code id="resultsForOfLooph4"></code>
+            </div>
+
+            <ul class="styled-list" id="resultsForOfLoop"></ul>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>For-in loop (objects)</p>
+                <label for="inputValueForInLoop"
+                    >Skriv in vad som ska finnas i arrayn, separera med
+                    mellanrum:</label
+                >
+                <br />
+                <input type="text" id="inputValueForInLoop" />
+                <button onclick="performForInLoop()">
+                    Loopa igenom och ge mig innehållet med stora bokstäver
+                </button>
+            </div>
+
+            <div
+                class="container"
+                style="
+                    padding: 2rem;
+                    background-color: #414141;
+                    color: white;
+                    margin: 2rem;
+                "
+            >
+                <code id="resultsForInLooph4"></code>
+            </div>
+
+            <ul class="styled-list" id="resultsForInLoop"></ul>
+
+            <header>
+                <h1>while loop</h1>
+            </header>
+
+            <div style="margin: 2rem">
+                <p>while loop</p>
+                <label for="inputValueWhileLoop"
+                    >Skriv in vad som ska finnas i arrayn, separera med
+                    mellanrum:</label
+                >
+                <br />
+                <input type="text" id="inputValueWhileLoop" />
+                <button onclick="performWhileLoop()">
+                    Loopa igenom och ge mig innehållet med stora bokstäver
+                </button>
+            </div>
+            <div
+                class="container"
+                style="
+                    padding: 2rem;
+                    background-color: #414141;
+                    color: white;
+                    margin: 2rem;
+                "
+            >
+                <code id="resultsWhileLooph4"></code>
+            </div>
+        </section>
+
+        <header>
+            <h1>Error handeling</h1>
+        </header>
+
+        <section id="resultsObjectSection">
+            <div style="margin: 2rem">
+                <p>throw</p>
+                <label for="inputError">Skriv in ditt error meddelande:</label>
+                <br />
+                <input type="text" id="inputError" />
+                <button onclick="showError()">Visa error:</button>
+            </div>
+
+            <div
+                class="container"
+                style="
+                    padding: 2rem;
+                    background-color: #414141;
+                    color: white;
+                    margin: 2rem;
+                "
+            >
+                <code id="resultsErrorh4"></code>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>throw new Error</p>
+                <label for="inputError">Skriv in ditt error meddelande:</label>
+                <br />
+                <input type="text" id="inputThroughError" />
+                <button onclick="showThroughError()">Visa error:</button>
+            </div>
+
+            <div
+                class="container"
+                style="
+                    padding: 2rem;
+                    background-color: #414141;
+                    color: white;
+                    margin: 2rem;
+                "
+            >
+                <code id="resultsThroughErrorh4"></code>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>try-catch</p>
+                <label for="inputErrorTryCatch"
+                    >tryck för error meddelande:</label
+                >
+                <br />
+                <button onclick="showErrorTryCatch()">Visa error:</button>
+            </div>
+
+            <div
+                class="container"
+                style="
+                    padding: 2rem;
+                    background-color: #414141;
+                    color: white;
+                    margin: 2rem;
+                "
+            >
+                <code id="resultsErrorTryCatchh4"></code>
+            </div>
+        </section>
+
+        <header>
+            <h1>Premetive vs. Reference</h1>
+        </header>
+
+        <section id="resultsObjectSection">
+            <div style="margin: 2rem">
+                <p>Premetive Values</p>
+                <label for="prem"
+                    >Tryck på någon av följande för att se exempel</label
+                >
+                <br />
+                <button onclick="showPrem('string Premetive')">
+                    string Premetive</button
+                ><br />
+                <button onclick="showPrem('number Premetive')">
+                    number Premetive</button
+                ><br />
+                <button onclick="showPrem('boolean Premetive')">
+                    boolean Premetive</button
+                ><br />
+                <button onclick="showPrem('nulls Premetive')">
+                    nulls Premetive</button
+                ><br />
+                <button onclick="showPrem('undefined Premetive')">
+                    undefined Premetive</button
+                ><br />
+                <button onclick="showPrem('symbol Premetive')">
+                    symbol Premetive</button
+                ><br />
+            </div>
+
+            <div
+                class="container"
+                style="
+                    padding: 2rem;
+                    background-color: #414141;
+                    color: white;
+                    margin: 2rem;
+                "
+            >
+                <code id="prem"></code>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>Reference Values</p>
+                <label for="ref"
+                    >Tryck på någon av följande för att se exempel</label
+                >
+                <br />
+                <button onclick="showRef('object Reference')">
+                    object Reference</button
+                ><br />
+                <button onclick="showRef('array Reference')">
+                    array Reference</button
+                ><br />
+            </div>
+
+            <div
+                class="container"
+                style="
+                    padding: 2rem;
+                    background-color: #414141;
+                    color: white;
+                    margin: 2rem;
+                "
+            >
+                <code id="ref"></code>
+            </div>
+        </section>
+
+        <header>
+            <h1>rest vs spread operator</h1>
+        </header>
+
+        <section id="resultsObjectSection">
+            <div style="margin: 2rem">
+                <p>rest operator (...)</p>
+
+                <button onclick="startSumUp()">Se värden</button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="restOp"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>spred operator (...)</p>
+
+                <button onclick="spreadFunc()">Se värden</button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="spreadOp"></code>
+                </div>
+            </div>
+        </section>
+
+        <header>
+            <h1>callback</h1>
+        </header>
+
+        <section id="resultsObjectSection">
+            <div style="margin: 2rem">
+                <p>callback</p>
+
+                <button onclick="startThecb()">Se värden</button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="cbf"></code>
+                </div>
+            </div>
+        </section>
+
+        <header>
+            <h1>Olika javascript metoder</h1>
+        </header>
+
+        <section id="resultsObjectSection">
+            <div style="margin: 2rem">
+                <p>Methods</p>
+                du kan skapa functions in an object, då heter dem methods. T.ex.
+                <br /><br />
+                <code
+                    >const person = { <br />
+                    &nbsp;&nbsp; greet: function () { <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(“Hello!”)
+                    <br />&nbsp;&nbsp; }<br />
+                    }</code
+                >  <br />
+                <br />
+                Så alla med punkt som person.greet() kallas methods.
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>Math.random</p>
+                <p>
+                    Detta ger en random siffra mellan 0 och 1, skriv om tusen
+                    gånger med if sats
+                </p>
+                <input type="number" id="inputFirstNr" />
+                <input type="number" id="inputSecondNr" />
+                <button onclick="takeNumbers()">Get random number</button><br />
+            </div>
+
+            <div
+                class="container"
+                style="
+                    padding: 2rem;
+                    background-color: #414141;
+                    color: white;
+                    margin: 2rem;
+                "
+            >
+                <code id="random"></code>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>setTimeOut vs setInterval</p>
+                <p>
+                    Detta startar en function efter en viss tid, exempel:<br /><br />
+                </p>
+                <pre>
+                    setTimeOut(() => { 
+                        console.log("Hej") 
+                    }, 3000);
+                </pre>
+                 
+                <br />
+                <button onclick="startTimeOut()">Starta</button><br />
+                <p id="timeoutCount"><span></span></p>
+            </div>
+            <div
+                class="container"
+                style="
+                    padding: 2rem;
+                    background-color: #414141;
+                    color: white;
+                    margin: 2rem;
+                "
+            >
+                <code id="timeout"></code>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>Navigation Functions</p>
+
+                <button style="margin-bottom: 0.5rem" onclick="navigateTo()">
+                    location.href
+                </button>
+                www.google.com, men du kan backa<br />
+                <button
+                    style="margin-bottom: 0.5rem"
+                    onclick="replaceLocation()"
+                >
+                    location.replace()</button
+                >www.google.com, men du kan INTE backa<br />
+                <button style="margin-bottom: 0.5rem" onclick="changePath()">
+                    location.pathname
+                </button>
+                gå till path: /new-path<br />
+                <button style="margin-bottom: 0.5rem" onclick="goBack()">
+                    history.back()
+                </button>
+                backa <br />
+                <button style="margin-bottom: 0.5rem" onclick="goForward()">
+                    history.forward()
+                </button>
+                gå fram <br />
+                <button
+                    style="margin-bottom: 0.5rem"
+                    onclick="getHistoryLength()"
+                >
+                    history.length
+                </button>
+                kolla hur långt tillbaka du kan gå<br />
+                <button onclick="goToSpecificPage()">history.go(2)</button> gå
+                till sida nr 2 bakåt<br />
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>new Date()</p>
+
+                <button onclick="dateTime()">se datum</button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="dateTime"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>bind()</p>
+
+                <button onclick="boundFunction()">Testa bind()</button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="bindTest"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>toggle()</p>
+
+                <button onclick="openCodeToggleTest()">Öppna code</button>
+                <button onclick="testToggle()">Testa toggle()</button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="toggleTest"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>.innerHTML vs .insertAdjacentHTML()</p>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 10px">
+                    <button onclick="openCodeTestInnerHTMLvs()">
+                        Öppna code
+                    </button>
+                    <button onclick="TESTinnerHTML()">.innerHTML</button>
+                    <button onclick="TESTinsertAdjacentHTMLbeforebegin()">
+                        .insertAdjacentHTML(beforebegin)
+                    </button>
+                    <button onclick="TESTinsertAdjacentHTMLafter()">
+                        .insertAdjacentHTML(afterbegin)
+                    </button>
+                    <button onclick="TESTinsertAdjacentHTMLbefore()">
+                        .insertAdjacentHTML(beforeend)
+                    </button>
+                    <button onclick="TESTinsertAdjacentHTMLafterend()">
+                        .insertAdjacentHTML(afterend)
+                    </button>
+                </div>
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="innerHTMLTest"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>.append() vs .appendChild()</p>
+
+                <button onclick="openCodeTestAppend()">Öppna code</button>
+                <button onclick="TESTappend()">
+                    .append("this is an append")
+                </button>
+                <button onclick="TESTappendChild()">
+                    .appendChild("this is an append")
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="appendTest"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <header>
+                <h1>nodes vs. elements</h1>
+            </header>
+
+            <div style="margin: 2rem">
+                <p>Node vs. Element</p>
+
+                <div
+                    style="
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                        gap: 10px;
+                    "
+                >
+                    <button style="width: 100%" onclick="showNode()">
+                        Node
+                    </button>
+                    <button style="width: 100%" onclick="showElement()">
+                        Element
+                    </button>
+
+                    <div
+                        class="container"
+                        style="
+                            padding: 2rem;
+                            background-color: #414141;
+                            color: white;
+                            margin: 2rem;
+                        "
+                    >
+                        <code id="nodevsel"></code>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>.lastElementChild</p>
+                <p>.firstElementChild</p>
+                <p>.cloneNode()</p>
+                <p>.nextElementSibling</p>
+                <p>.previousElementSibling</p>
+                <p>.insertBefore()</p>
+                <p>.replaceWith</p>
+                <p>.before()</p>
+                <p>.after()</p>
+                <p>.parentElement</p>
+                <p>.remove()</p>
+
+                <div
+                    style="
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                        gap: 10px;
+                    "
+                >
+                    <button style="width: 100%" onclick="putLi()">
+                        Open list with nextLi
+                    </button>
+
+                    <br />
+
+                    <button style="width: 100%" onclick="beforeLast()">
+                        ul.lastElementChild.before(li)
+                    </button>
+                    <button style="width: 100%" onclick="afterLast()">
+                        ul.lastElementChild.after(li)
+                    </button>
+
+                    <br />
+
+                    <button style="width: 100%" onclick="beforeFirst()">
+                        ul.firstElementChild.before(li)
+                    </button>
+                    <button style="width: 100%" onclick="afterFirst()">
+                        ul.firstElementChild.after(li)
+                    </button>
+
+                    <br />
+
+                    <button style="width: 100%" onclick="nextEl()">
+                        <pre>
+li.textContent = 
+nextLi.nextElementSibling.cloneNode(true).innerHTML;   
+
+ul.firstElementChild.before(li)
+
+//här kopierar vi innehållet av next element sibling av
+//nextLi eftersom before och after flyttar elementet 
+//bara inte kopierar
+</pre
+                        >
+                    </button>
+                    <button style="width: 100%" onclick="prevEl()">
+                        <pre>
+li.textContent = 
+nextLi.previousElementSibling.cloneNode(true).innerHTML;   
+
+ul.firstElementChild.before(li)
+                        </pre>
+                    </button>
+
+                    <br />
+
+                    <button style="width: 100%" onclick="insertLiBefore()">
+                        ul.insertBefore(li, ul.firstElementChild)
+                    </button>
+
+                    <br />
+
+                    <button style="width: 100%" onclick="replacewith()">
+                        ul.firstElementChild.replaceWith(li);
+                    </button>
+
+                    <br />
+
+                    <button style="width: 100%" onclick="afterNextLi()">
+                        nextLi.after(li);
+                    </button>
+                    <button style="width: 100%" onclick="beforeNextLi()">
+                        nextLi.before(li);
+                    </button>
+
+                    <br />
+
+                    <button style="width: 100%" onclick="putParentElement()">
+                        ul.parentElement.after(li);
+                    </button>
+
+                    <br />
+
+                    <button style="width: 100%" onclick="removeEl()">
+                        ul.firstElementChild.remove();
+                    </button>
+                </div>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="lastElementChild">
+                        <ul class="styled-list show" id="styled-listLi"></ul>
+                    </code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>.className</p>
+                <p>.classList.add()</p>
+
+                <button style="width: 100%" onclick="openCode()">
+                    Open code
+                </button>
+                <button style="width: 100%" onclick="changeClassname()">
+                    change className
+                </button>
+                <button style="width: 100%" onclick="addClassname()">
+                    add className
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="classnameTest"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>trim()</p>
+
+                <input style="margin-bottom: 0.5rem;" type="text" id="trimtest" />
+                <button style="width: 100%" onclick="catchInput()">
+                    show input without whitespaces using trim()
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="inputTest"></code>
+                </div>
+            </div>
+        </section>
+
+        <header>
+            <h1>Array methods</h1>
+        </header>
+
+        <section id="resultsObjectSection">
+            <div style="margin: 2rem">
+                <p>Array.from()</p>
+
+                <input style="margin-bottom: 0.5rem;" type="text" id="arrayinputstring" />
+                <button style="width: 100%" onclick="makeArray()">
+                    make array from your string:
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="arrayfromstring"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>.push()  -> modify existing array</p>
+
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openpusharray()">
+                    Open code window
+                </button>
+                <input style="margin-bottom: 0.5rem;" type="text" id="pusharrayinput" />
+                <button style="width: 100%" onclick="pushArray()">
+                    push your input into the array
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="pusharray"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>.unshift()  -> modify existing array</p>
+
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openunshiftarray()">
+                    Open code window
+                </button>
+                <input style="margin-bottom: 0.5rem;" type="text" id="unshiftarrayinput" />
+                <button style="width: 100%" onclick="unshiftArray()">
+                    unshift your input into the array
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="unshiftarray"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>.pop()  -> modify existing array</p>
+
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openpoparray()">
+                    Open code window
+                </button>
+                <button style="width: 100%" onclick="popArray()">
+                    pop last index out of the array
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="poparray"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>.shift()  -> modify existing array</p>
+
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openshiftarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%" onclick="shiftArray()">
+                    shift last index out of the array
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="shiftarray"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>.splice()  -> modify existing array</p>
+
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="opensplicearray()">
+                    Open code window
+                </button>
+
+                splice(0, 0, "<input style="margin-bottom: 0.5rem;" type="text" id="splicearrayinput" />")
+
+                <button style=" margin-bottom: 0.5rem;" onclick="spliceArray()">
+                    splice the array
+                </button><br>
+
+                splice(1, 1, "<input style="margin-bottom: 0.5rem;" type="text" id="splice2arrayinput" />")
+
+                <button style="margin-bottom: 0.5rem;" onclick="splice2Array()">
+                    splice the array
+                </button>
+
+                <button style="width: 100%;" onclick="splice3Array()">
+                    splice(0, 2);
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="splicearray"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>.slice() -> create new array with a copy</p>
+
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openslicearray()">
+                    Open code window
+                </button>
+                <button style="width: 100%" onclick="sliceArray()">
+                    slice(0, 1)
+                </button>
+                <button style="width: 100%" onclick="slice2Array()">
+                    slice(2, 3)
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="slicearray"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>[...arr] -> create new array with a copy</p>
+
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openspreadarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%" onclick="spreadArray()">
+                    const arrNr2 = [...arr];
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="spreadarray"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>.concat()  -> create new array with a copy</p>
+
+                <button style="width: 100%; margin-bottom: 1rem;" onclick="openconcatarray()">
+                    Open code window
+                </button>
+                <input style="margin-bottom: 0.5rem;" type="text" id="concatarrayinput" />
+                <button style="margin-bottom: 1rem;" onclick="concatArray()">
+                    concat your input into the array
+                </button>
+                <button style="width: 100%" onclick="concatArrayMulti()">
+                    arr.concat( ['äpple', 'päron'] )
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="concatarray"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    .indexOf()
+                    <br>
+                    .lastIndexOf()
+                    <br><br>
+                    Lägg märke till att om du får -1 som svar då betyder det att det inte finns något i arrayn med ditt värde du letar efter.
+                    <br>
+                    Du kan inte leta efter array som finns i array eller object som finns i object , detta eftersom indexOf kan inte leta efter reference array/objects, där dem har samma address värde i minnet.
+                    <br>
+                    T.ex. [ [], [], [] ] eller [ {}, {}, {} ] eller { {}, {}, {} } eller { [], [], [] } 
+                    <br>
+                    isåfall får du använda .find() för true / false eller .findIndex() för o hitta index nr.
+                </p>
+
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openindexOfarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.3rem;" onclick="indexOfArray()">
+                    console.log(arr.indexOf('taleb'));
+                </button>
+                <button style="width: 100%; margin-bottom: 0.3rem;" onclick="lastIndexOfArray()">
+                    console.log(arr.lastIndexOf('taleb'));
+                </button>
+                <button style="width: 100%" onclick="IndexOfArrayWithStart()">
+                    console.log(arr.indexOf('taleb', 2));
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="indexOfarray"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    .includes()
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openincludesarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="includesarray()">
+                    arr.includes('ali')
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="includesarrayDiv"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    .toString()
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="opentoStringarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="toStringarray()">
+                    arr.toString('ali')
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="toStringarrayDiv"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    .join()
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openjoinarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="joinarray()">
+                    arr.join('*')
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="joinarrayDiv"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    .split()
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="opensplitarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="splitarray()">
+                    arr.split('*')
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="splitarrayDiv"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    Math.min(...prices)
+                    Math.max(...prices)
+                    <br>
+                    här itererar vi i prices array och returnerar minsta/max värdet där inne
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openmathminarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="mathminarray()">
+                    Math.min(...prices)
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="mathmaxarray()">
+                    Math.max(...prices)
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="mathminarrayDiv"></code>
+                </div>
+            </div>
+        </section>
+
+        <header>
+            <h1>Higher-order functions (array)</h1>
+        </header>
+
+        <section id="resultsObjectSection">
+            <div style="margin: 2rem">
+                <p>
+                    .find()
+                    <br><br>
+                    true or false, du letar i arrayn och ser om ditt värde existerar eller inte.
+                    <br>
+                    kan även leta arrays in array och objects in object
+                    <br><br>
+                    här kan du även ändra namn värde, men då ändras den faktiskta arrayen.
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openfindarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="findInarray()">
+                    arr.find((name, index, persons) => {return name.name === "taleb"})
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="findInarrayDiv"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    .findIndex()
+                    <br><br>
+                    du får tillbaka index numret av värdet.
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openfindindexarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="findIndexarray()">
+                    arr.findIndex(element => element === 'taleb')
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="findIndexarrayDiv"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    .forEach()
+                    <br><br>
+                    här arbetar forEach med existing array och pushar arbetad kod mot ny array för att inte skada originalet.
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openforEacharray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="forEacharray()">
+                    forEach
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="forEacharrayDiv"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    .map()
+                    <br><br>
+                    här arbetar map med arrayn MEN vi skapar en ny array, fyller den med objects som tilldelas ID  och nya priser och sedan returnerar.
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openmaparray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="maparray()">
+                    map
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="maparrayDiv"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    .sort()
+                    <br><br>
+                    här arbetar sort med arrayn MEN vi skapar INTE ny array och returnerar den sorterad.
+                    <br>
+                    vill du sortera reveresed så kör du serteradArray.reverse();
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="opensortarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="sortarray()">
+                    sort
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="sortReversearray()">
+                    sorted.reverse()
+                </button>
+
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="sortarrayDiv"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    .filter()
+                    <br><br>
+                    här arbetar filter med arrayn MEN vi skapar ny array och returneras filtrerad.
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openfilterarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="filterarray()">
+                    filter
+                </button>
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="filterarrayDiv"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    .reduce()
+                    <br><br>
+                    här arbetar reduce med arrayn MEN vi skapar ny array och returnerar summan.
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openreducearray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="reducearray()">
+                    reduce
+                </button>
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="reducearrayDiv"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    .every()
+                    <br><br>
+                    här arbetar every med arrayn MEN vi skapar ny array och returnerar om värderna i arrayen är mindre än 40.
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openeveryarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="everyarray()">
+                    every
+                </button>
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="everyarrayDiv"></code>
+                </div>
+            </div>
+
+        </section>
+
+        <header>
+            <h1>distructuring array or object</h1>
+        </header>
+
+        <section id="resultsObjectSection">
+            <div style="margin: 2rem">
+                <p>
+                    array / object
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="opendisarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="disarray()">
+                    distructure array
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="disobject()">
+                    distructure object
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="disAllobject()">
+                    distructure everything in object
+                </button>
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="disarrayDiv"></code>
+                </div>
+            </div>
+        </section>
+
+        <header>
+            <h1>Data structure: Set & Map</h1>
+        </header>
+
+        <section id="resultsObjectSection">
+            <div style="margin: 2rem">
+                <p>
+                    new Set() & new Map()
+                    <br><br>
+                    Set classen använder man eftersom den aldrig skapar dubletter.
+                    <br><br>
+                    Map classen används för att ha vilken data typ som helst i key istället för bara sträng
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openSetarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="setFunc()">
+                    set
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="mapFunc()">
+                    map
+                </button>
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="SetarrayDiv"></code>
+                </div>
+            </div>
+        </section>
+
+        <header>
+            <h1>OBJECTS</h1>
+        </header>
+
+        <section id="resultsObjectSection">
+            <div style="margin: 2rem">
+                <p>
+                    Object.entries()
+                    <br><br>
+                    Du gör om key value pairs till arrays.
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openObjEntrarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="ObjEntr()">
+                    Gör om till array
+                </button>
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="ObjEntrarrayDiv"></code>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div style="margin: 2rem">
+                <p>
+                    play with object
+                </p>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="openObjPlaytrarray()">
+                    Open code window
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="ObjPlayGreet()">
+                    person.greet();
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="ObjPlayIsAdmin()">
+                    person.isAdmin = true;
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="ObjPlayDelete()">
+                    delete person.age;
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="ObjPlayNameString()">
+                    Du kan nämna keys som strängar
+                </button>
+                <button style="width: 100%; margin-bottom: 0.5rem;" onclick="ObjPlayDynName()">
+                    dynamiska namn av key via strängar
+                </button>
+                <div
+                    class="container"
+                    style="
+                        padding: 2rem;
+                        background-color: #414141;
+                        color: white;
+                        margin: 2rem;
+                    "
+                >
+                    <code id="ObjPlayarrayDiv"></code>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
